@@ -40,7 +40,8 @@ class UploadsController < ApplicationController
   # POST /uploads
   # POST /uploads.xml
   def create
-    @upload = Upload.new(params[:upload])
+    uploaded_file = params[:upload][:file]
+    @upload = Upload.new(:local_path => Upload.store_locally(uploaded_file))
 
     respond_to do |format|
       if @upload.save

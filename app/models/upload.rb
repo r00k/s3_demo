@@ -1,5 +1,4 @@
 class Upload < ActiveRecord::Base
-
   LOCAL_STORAGE_DIRECTORY = Rails.root.join('tmp', 'uploads')
 
   def self.store_locally(uploaded_data)

@@ -13,6 +13,7 @@ class UploadsControllerTest < ActionController::TestCase
   end
 
   test "should create upload" do
+    Upload.expects(:store_locally => 'foo.txt')
     assert_difference('Upload.count') do
       post :create, :upload => { }
     end

@@ -1,11 +1,10 @@
 <% title("Upload a file:") %>
 
-<% form_for(@upload) do |f| %>
+<% form_for @upload, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :local_path %><br />
-    <%= f.text_field :local_path %>
+    <%= f.file_field :file %>
   </p>
   <p>
     <%= f.submit 'Create' %>
