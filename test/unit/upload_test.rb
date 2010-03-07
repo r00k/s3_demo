@@ -19,4 +19,10 @@ class UploadTest < ActiveSupport::TestCase
     end
   end
 
+  test "upload to s3" do 
+    file = Tempfile.new('foo.txt')
+    S3Upload.expects(:store)
+    Upload.create(:local_path => file.path)
+  end
+
 end

@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class UploadsControllerTest < ActionController::TestCase
+
+  def setup
+    Upload.any_instance.stubs(:upload_to_s3)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
