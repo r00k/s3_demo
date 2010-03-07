@@ -6,4 +6,8 @@ class Upload < ActiveRecord::Base
     File.open(file_path, 'w') { |file| file.write(uploaded_data.read) }
     file_path.to_s
   end
+
+  def s3_key
+    File.basename(local_path)
+  end
 end
