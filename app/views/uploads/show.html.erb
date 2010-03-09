@@ -1,6 +1,6 @@
 <p>
-  <b>Local path:</b>
-  <%=h @upload.local_path %>
+  <b>S3 Link:</b>
+  <%= link_to 'File on s3', @upload.s3_url %>
 </p>
 
 
