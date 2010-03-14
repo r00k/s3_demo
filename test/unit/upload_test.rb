@@ -20,9 +20,10 @@ class UploadTest < ActiveSupport::TestCase
   end
 
   test "upload to s3" do 
-    file = Tempfile.new('foo.txt')
-    S3Upload.expects(:store)
-    Upload.create(:local_path => file.path)
+    Tempfile.open('foo.txt') do |file|
+      Delayed::Job.expects(:enqueue)
+      Upload.create(:local_path => file.path)
+    end
   end
 
 end
