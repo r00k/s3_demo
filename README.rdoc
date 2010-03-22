@@ -1,5 +1,5 @@
 =A sample Rails application for uploading data to S3.
 
-It was created as part of my Building a File-Upload App with Rails and S3 screencast:
+It was created as part of my 'Building a File-Upload App with Rails and S3' screencast:
 
 http://www.codeulatescreencasts.com/products/build-an-app-with-rails-and-s3
